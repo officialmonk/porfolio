@@ -1,0 +1,28 @@
+.container{
+    margin: 10px auto;
+}
+.img-thumbnail{
+    margin-top: 70px;
+    margin-left: -50px;
+    height: 400px;
+    width: 500px;
+    transform: rotate(90deg);
+}
+.name{
+    margin-top: 10px;
+}
+.table{
+    width: 700px; 
+    margin-top: 20px;
+}
+.registr{
+    max-width: 500px;
+    min-width: 350px;
+    margin: 10px auto;
+}
+
+.registr_btn{
+    margin-left: 46%;
+}
+
+

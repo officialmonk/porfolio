@@ -1,0 +1,36 @@
+.alert_user{
+     width: 200px;
+    text-align: center;
+}
+.container{
+    margin: 10px auto;
+}
+.img-thumbnail{
+    margin-top: 70px;
+    margin-left: -50px;
+    height: 400px;
+    width: 500px;
+    transform: rotate(90deg);
+}
+.table{
+    width: 700px; 
+    margin-top: 20px;
+}
+.rounded{
+    text-align: center;
+    max-width: 500px;
+    margin: 0 auto;
+}
+@media (max-width: 773px) {
+    .d-inline-flex{
+        flex-wrap: wrap;
+    }
+    .table{
+        margin-top: 50px;
+        width: 100%;
+    }
+    .img-thumbnail{
+        width: 100%;
+        margin: 10px auto;
+    }
+}
