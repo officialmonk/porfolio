@@ -134,6 +134,7 @@ $password2 = $_POST['password2'];
 </table>
 </div>
 </div>
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <script src="bootstrap-4.3.0-dist/js/bootstrap.js"></script>
 </body>
 </html>
