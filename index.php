@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Document</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    
     <link rel="stylesheet" href="bootstrap-4.3.0-dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
@@ -61,6 +61,7 @@
   <input type="submit" class="btn btn-outline-success registr_btn" value="Check in">
 </form>
 </div>
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <script src="bootstrap-4.3.0-dist/js/bootstrap.js"></script>
 </body>
 </html>
