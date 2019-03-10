@@ -3,9 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Document</title>
-    
     <link rel="stylesheet" href="bootstrap-4.3.0-dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="start.css">
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -26,11 +25,10 @@
         <a class="nav-link disabled" href="#">Disabled</a>
       </li>
     </ul>
-    <form class="form-inline" method="post" action="signin.php">
-  <label class="sr-only" for="inlineFormInputName2">Name</label>
+    <form class="form-inline" method="post" action="sign_in.php">
   <input type="text" class="form-control mb-2 mr-sm-2" id="inlineFormInputName2" placeholder="Username" required autocomplete="off" name="username">
 
-  <label class="sr-only" for="inlineFormInputGroupUsername2">Username</label>
+  
   <div class="input-group mb-2 mr-sm-2">
   
     <input type="Password" class="form-control" id="inlineFormInputGroupUsername2" placeholder="Password" required autocomplete="off" name="password">
@@ -43,7 +41,7 @@
     </label>
   </div>
 
-  <button type="submit" class="btn btn-primary mb-2">Submit</button>
+  <button type="submit" class="btn btn-primary mb-2" name="sub">Submit</button>
 </form>
   </div>
 </nav>
@@ -58,10 +56,10 @@
   <input type="text" class="form-control registr" placeholder="Email" aria-label="" aria-describedby="basic-addon1" name="email" required autocomplete="off">
   <input type="password" class="form-control registr" placeholder="Password" aria-label="" aria-describedby="basic-addon1" name="password" required autocomplete="off">
   <input type="password" class="form-control registr" placeholder="Repeat Password" aria-label="" aria-describedby="basic-addon1" name="password2" required autocomplete="off">
-  <input type="submit" class="btn btn-outline-success registr_btn" value="Check in">
+  <input type="submit" class="btn btn-outline-success registr_btn" name="btn" value="Check in">
 </form>
 </div>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-    <script src="bootstrap-4.3.0-dist/js/bootstrap.js"></script>
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+<script src="bootstrap-4.3.0-dist/js/bootstrap.js"></script>
 </body>
 </html>
