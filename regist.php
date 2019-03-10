@@ -1,3 +1,4 @@
+<?php header("Content-Type: text/html; charset=UTF-8");?>
 <?php
 $servername = 'localhost';
 $username = 'root';
@@ -5,9 +6,9 @@ $password = '';
 $db = 'blog';
 $connection = mysqli_connect($servername, $username, $password);
 $select_db = mysqli_select_db($connection, $db);
-
-
-if(isset($_POST['name']) && isset($_POST['username'])){
+//
+//
+if(isset($_POST['btn'])){
 $name = $_POST['name'];
 $username = $_POST['username'];
 $email = $_POST['email'];
@@ -16,9 +17,7 @@ $password2 = $_POST['password2'];
     if($password == $password2){
     $query = "INSERT INTO users (name, username, email, password) VALUES ('$name', '$username', '$email', '$password')";
   $result = mysqli_query($connection, $query);
-}else{
-        echo "hi";
-    }
+}
 }
 ?>
 <!DOCTYPE html>
@@ -48,93 +47,32 @@ $password2 = $_POST['password2'];
         <a class="nav-link disabled" href="#">Disabled</a>
       </li>
     </ul>
-    <div class="alert alert-primary alert_user" role="alert">
-    <?php echo $username; ?>
-</div>
+ <form action="index.php">
+        <input type="submit" class="alert alert-primary alert_user" role="alert" value="Logout"> 
+    </form>
   </div>
 </nav>
 
 <div class="container">
-    <div class="input-group">
-  <input type="text" class="form-control" placeholder="" aria-label="" aria-describedby="basic-addon1">
-  <div class="input-group-append">
-    <button class="btn btn-success" type="button">Search</button>
-  </div>
+   <?php 
+    $headers = 'From: Денис Хуткий <br/>';
+    $headers .= 'Reply-to: example@gmail.com';
+    $theme = 'Новое сообщение';
+    
+    $letter = "Данные сообщение: <br/>";
+    $letter .="Имя: ".$name."<br/>";
+    $letter .="Email: ".$email."<br/>";
+    $letter .="Телефон: ".$phone."<br/>";
+    $letter .='Сообщение:  <br/>'.$message;
+    
+    mail($email, $theme, $letter, $headers);
+    ?>
+    <div class="alert alert-primary" role="alert">
+    <strong>Спасибо за регистрацию!</strong> На вашу почту <?php echo $email ?> отправлено письмо!
 </div>
-<div class=" name shadow p-3 mb-5 bg-light rounded"><?php echo $name ?></div>
-<div class="d-inline-flex">
-<img class="img-thumbnail" src="src/IMG_2872.JPG" alt="Thumbnail image">
-<table class="table">
-  <thead class="thead-dark">
-    <tr>
-      <th>#</th>
-      <th>Skills</th>
-      <th>Progress</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>HTML</td>
-      <td><div class="progress">
-  <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 95%"></div>
+    
 </div>
-</td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>CSS</td>
-      <td><div class="progress">
-  <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 85%"></div>
-</div></td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>JS</td>
-      <td><div class="progress">
-  <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 50%"></div>
-</div></td>
-    </tr>
-    <tr>
-      <th scope="row">4</th>
-      <td>JQUERY</td>
-      <td><div class="progress">
-  <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 40%"></div>
-</div></td>
-    </tr>
-    <tr>
-      <th scope="row">5</th>
-      <td>REACT JS</td>
-      <td><div class="progress">
-  <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 35%"></div>
-</div></td>
-    </tr>
-        <tr>
-      <th scope="row">6</th>
-      <td>PHP</td>
-      <td><div class="progress">
-  <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 50%"></div>
-</div></td>
-    </tr>
-    <tr>
-      <th scope="row">7</th>
-      <td>SQL</td>
-      <td><div class="progress">
-  <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 50%"></div>
-</div></td>
-    </tr>
-    <tr>
-      <th scope="row">8</th>
-      <td>BOOTSTRAP</td>
-      <td><div class="progress">
-  <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 80%"></div>
-</div></td>
-    </tr>
-  </tbody>
-</table>
-</div>
-</div>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-    <script src="bootstrap-4.3.0-dist/js/bootstrap.js"></script>
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+<script src="bootstrap-4.3.0-dist/js/bootstrap.js"></script>
 </body>
 </html>
